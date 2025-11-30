@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrossFireX Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="backdrop-grid"></div>
+  <header class="topbar">
+    <div class="brand">CrossFireX</div>
+    <nav class="top-actions">
+      <button class="ghost" id="btnPatchNotes">Patch Notes</button>
+      <button class="ghost" id="btnSettings">Settings</button>
+      <button class="pill" id="btnSignIn">Sign In</button>
+    </nav>
+  </header>
+
+  <main id="menu" class="menu">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Fast-Paced Browser Shooter</p>
+        <h1>Drop into CrossFireX</h1>
+        <p class="lede">Form a party, slide onto the podium, and sprint into an arena inspired by Krunker.io — tight movement, crisp gunplay, and instant matchmaking.</p>
+        <div class="cta-row">
+          <button class="primary" id="btnPlay">Play</button>
+          <button class="outline" id="btnTraining">Training</button>
+          <button class="outline" id="btnCustomize">Customize</button>
+        </div>
+      </div>
+      <div class="podium-card">
+        <p class="label">Party Podium</p>
+        <div class="podium">
+          <div class="podium-spot second">
+            <div class="avatar purple">MN</div>
+            <p>MintNova</p>
+            <span>Level 27</span>
+          </div>
+          <div class="podium-spot first">
+            <div class="avatar gold">LX</div>
+            <p>LuxRay</p>
+            <span>Leader</span>
+          </div>
+          <div class="podium-spot third">
+            <div class="avatar teal">KY</div>
+            <p>Kyoto</p>
+            <span>Sharpshooter</span>
+          </div>
+        </div>
+        <div class="podium-actions">
+          <button class="pill">Invite</button>
+          <button class="pill ghost">Copy Party Link</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="social">
+      <div class="panel party">
+        <header>
+          <div>
+            <p class="eyebrow">Party</p>
+            <h3>Cross-Play Lobby</h3>
+          </div>
+          <button class="ghost" id="btnSwitchRegion">Change Region</button>
+        </header>
+        <ul id="partyList" class="list"></ul>
+        <div class="panel-actions">
+          <button class="primary" id="btnQueue">Queue Quick Play</button>
+          <button class="outline" id="btnPrivate">Create Private Lobby</button>
+        </div>
+      </div>
+
+      <div class="panel friends">
+        <header>
+          <div>
+            <p class="eyebrow">Friends</p>
+            <h3>Presence & Invites</h3>
+          </div>
+          <input id="friendSearch" placeholder="Search or add ID" />
+        </header>
+        <ul id="friendList" class="list"></ul>
+        <div class="panel-actions">
+          <button class="outline" id="btnAddFriend">Add Friend</button>
+          <button class="ghost" id="btnRecent">Recent Players</button>
+        </div>
+      </div>
+
+      <div class="panel inventory">
+        <header>
+          <div>
+            <p class="eyebrow">Inventory</p>
+            <h3>Loadout & Cosmetics</h3>
+          </div>
+          <button class="ghost" id="btnShuffleLoadout">Randomize</button>
+        </header>
+        <div class="inventory-grid" id="inventoryGrid"></div>
+        <div class="panel-actions">
+          <button class="outline" id="btnEquip">Equip Selection</button>
+          <button class="ghost" id="btnInspect">Inspect</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="game" class="game hidden">
+    <div class="hud">
+      <div class="hud-left">
+        <div class="stat">HP: <span id="hp">100</span></div>
+        <div class="stat">Shield: <span id="shield">50</span></div>
+        <div class="stat">Ability: <span id="ability">Blink Dash</span></div>
+      </div>
+      <div class="hud-center">
+        <div class="crosshair"></div>
+        <div class="reticle"></div>
+      </div>
+      <div class="hud-right">
+        <div class="stat">Weapon: <span id="weapon">Pulse Rifle</span></div>
+        <div class="stat">Ammo: <span id="ammo">30 / 120</span></div>
+        <div class="stat">Streak: <span id="streak">0</span></div>
+      </div>
+    </div>
+    <canvas id="gameCanvas" width="1180" height="640"></canvas>
+    <div class="game-actions">
+      <button class="pill" id="btnLeave">Return to Menu</button>
+      <div class="mini-log" id="eventLog"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Prototype shooter inspired by Krunker.io • Arrow keys/WASD to move • Mouse to aim and click to shoot • Shift to sprint, Space to dash</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
