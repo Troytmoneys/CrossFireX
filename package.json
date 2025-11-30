@@ -1,0 +1,20 @@
+{
+  "name": "crossfirex",
+  "version": "1.0.0",
+  "description": "Design documents and prototype notes for a small-team tactical shooter built in Unity.",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}
